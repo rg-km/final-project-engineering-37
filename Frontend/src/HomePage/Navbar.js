@@ -2,19 +2,26 @@ import React from "react";
 import {
     chakra,
     Flex,
-    useColorModeValue,
     HStack,
     Button,
     Image,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    useDisclosure,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
-    const bg = useColorModeValue("white", "white");
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
         <React.Fragment>
             <chakra.header
-                bg={bg}
                 w="full"
                 px={{ base: 2, sm: 4 }}
                 py={4}
@@ -34,15 +41,15 @@ export default function Navbar() {
                             mr={1}
                             color="black"
                         >
-                            <Button colorScheme='black' variant="ghost">Home</Button>
-                            <Button colorScheme='black' variant="ghost">Kelas</Button>
+                            <Button to={"/Home"} as={Link} colorScheme='black' variant="ghost">Home</Button>
+                            <Button to={"/Kelas"} as={Link} colorScheme='black' variant="ghost">Kelas</Button>
                         </HStack>
                         <HStack
                             spacing={1}
                             mr={1}
                             color={"#006D77"}
                         >
-                            <Button colorScheme={"#006D77"} size="sm" variant='ghost'>
+                            <Button onClick={onOpen} colorScheme={"#006D77"} size="sm" variant='ghost'>
                                 Login
                             </Button>
                         </HStack>
@@ -58,6 +65,25 @@ export default function Navbar() {
                     </HStack>
                 </Flex>
             </chakra.header>
+
+            <Modal isCentered isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>Login</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <p count={2}></p>
+                    </ModalBody>
+
+                    {/* <ModalFooter>
+                        <Button colorScheme='blue' mr={3} onClick={onClose}>
+                            Close
+                        </Button>
+                        <Button variant='ghost'>Secondary Action</Button>
+                    </ModalFooter> */}
+                </ModalContent>
+            </Modal>
+
         </React.Fragment>
     );
 }
