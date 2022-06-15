@@ -1,19 +1,23 @@
 import React from "react";
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Button, Flex, Image } from '@chakra-ui/react'
 
 export default function kelas() {
     return (
-        <Grid templateColumns='repeat(3, 1fr)' gap={3} marginTop='4vh'>
-            <GridItem w='100%' h='10'/>
-            <GridItem w='110%' h='10' align='center' fontSize={60} color='black'>
-                <h1>Welcome to KEelas!</h1>
-            </GridItem>
-            <GridItem w='100%' h='10'/>
+        <Flex height="100vh" alignItems="center" justifyContent="center">
+           <Flex margin="40px" direction="column" background="gray.100" p={12} rounded={6}>
+               <Image height="-moz-min-content" src="https://executive-education.id/wp-content/uploads/2021/12/sekolah-dasar-executive-education.png" alt='Content image' />
+               <Button colorScheme="teal">SD</Button>
+           </Flex> 
 
-            <GridItem w='100%' h='10'/>
-            <GridItem w='110%' h='10' marginTop='8vh' align='center' fontSize={18} color='black'>
-                <p>Situs website yang memberikan sebuah informasi mengenai lomba, seminar, beasiswa dan modul-modul pembelajaran yang up to date</p>
-            </GridItem>
-        </Grid>
+           <Flex margin="40px" direction="column" background="gray.100" p={12} rounded={6}>
+                <Image height="-moz-min-content" src="https://executive-education.id/wp-content/uploads/2021/12/sekolah-menengah-pertama-smp.png" alt='Content image' />
+                <Button colorScheme="teal">SMP</Button>
+           </Flex> 
+
+           <Flex margin="40px" direction="column" background="gray.100" p={12} rounded={6}>
+               <Image height="-moz-min-content" src="https://executive-education.id/wp-content/uploads/2021/12/sekolah-menengah-atas-sma.png" alt='Content image' />
+               <Button colorScheme="teal">SMA</Button>
+           </Flex>   
+        </Flex>
     )
 }
