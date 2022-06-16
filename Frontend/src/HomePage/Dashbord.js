@@ -12,17 +12,17 @@ export default function Dashbord() {
 
                 <GridItem>
                     <Box position={"relative"} transition={'.2s'} _hover={{ transform: 'scale(1.1)', zIndex: 5, boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', cursor: 'pointer' }}>
-                        <Image src="https://user-images.githubusercontent.com/30518462/173663571-a418fbd7-cb38-4941-a723-0c1b0bcebca5.png" alt='Content image' />
+                        <Image height="-moz-min-content" src="https://user-images.githubusercontent.com/30518462/173663571-a418fbd7-cb38-4941-a723-0c1b0bcebca5.png" alt='Content image' />
                     </Box>
                 </GridItem>
                 <GridItem marginTop={10}>
                     <Box position={"relative"} transition={'.2s'} _hover={{ transform: 'scale(1.1)', zIndex: 5, boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', cursor: 'pointer' }}>
-                        <Image src="https://user-images.githubusercontent.com/30518462/173665075-a40f8799-c145-4a89-b1c0-5ba52e85b59c.png" alt='Content image' />
+                        <Image height="-moz-min-content" src="https://user-images.githubusercontent.com/30518462/173665075-a40f8799-c145-4a89-b1c0-5ba52e85b59c.png" alt='Content image' />
                     </Box>
                 </GridItem>
                 <GridItem>
                     <Box position={"relative"} transition={'.2s'} _hover={{ transform: 'scale(1.1)', zIndex: 5, boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', cursor: 'pointer' }}>
-                        <Image src="https://user-images.githubusercontent.com/30518462/173665758-18f597fe-bafb-4bd7-935a-7f8a1c1a5c03.png" alt='Content image' />
+                        <Image height="-moz-min-content" src="https://user-images.githubusercontent.com/30518462/173665758-18f597fe-bafb-4bd7-935a-7f8a1c1a5c03.png" alt='Content image' />
                     </Box>
                 </GridItem>
             </Grid>
