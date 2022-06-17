@@ -69,7 +69,7 @@ export default function Navbar() {
                             bg={"#006D77"}
                             borderRadius='20px'
                         >
-                            <Button variant="ghost" borderRadius='20px' size="sm">Register</Button>
+                            <Button onClick={onOpen} variant="ghost" borderRadius='20px' size="sm">Register</Button>
                         </HStack>
                     </HStack>
                 </Flex>
@@ -111,12 +111,10 @@ export default function Navbar() {
                             </Box>
                         </Flex>
                     </ModalBody>
-
                     {/* <ModalFooter>
                     </ModalFooter> */}
                 </ModalContent>
             </Modal>
-
         </React.Fragment>
     );
 }
