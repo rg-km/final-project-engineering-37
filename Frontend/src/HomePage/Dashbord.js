@@ -6,7 +6,7 @@ export default function Dashbord() {
     return (
         <Flex direction={"column"} alignItems='center' marginTop={30}>
             <h1 className="judul">Welcome to EdTEch!</h1>
-            <p class="jdul">Situs website yang memberikan sebuah informasi mengenai lomba, seminar, beasiswa dan modul-modul pembelajaran yang up to date</p>
+            <p className="jdul">Situs website yang memberikan sebuah informasi mengenai lomba, seminar, beasiswa dan modul-modul pembelajaran yang up to date</p>
 
             <Grid gridTemplateColumns={'repeat(3, 1fr)'} gap={3} marginTop={100}>
 

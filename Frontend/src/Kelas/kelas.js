@@ -6,7 +6,7 @@ export default function kelas() {
     return (
         <Flex direction={"column"} alignItems="center" justifyContent="center" marginTop={30}>
             
-            <Grid marginTop={100} class="kotak" gridTemplateColumns={'repeat(3, 1fr)'} gap={12}>
+            <Grid marginTop={100} className="kotak" gridTemplateColumns={'repeat(3, 1fr)'} gap={12}>
 
                 <GridItem background="gray.100" borderRadius={20} maxWidth={400}>
                     <Box position={"relative"} borderRadius={20} transition={'.2s'} _hover={{ transform: 'scale(1.1)', zIndex: 5, boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', cursor: 'pointer' }}>

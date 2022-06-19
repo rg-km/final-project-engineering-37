@@ -33,11 +33,67 @@ export default function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [modal, setModal] = useState('login')
     const [user, setUser] = useState(null)
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [firstName, setFirstname] = useState("")
+    const [phone, setPhone] = useState("")
+    const [userName, setUsername] = useState("")
+
 
     const submitLogin = (e) => {
         e.preventDefault()
-        setUser('login')
+
+        fetch(`https://dummyjson.com/users`)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(
+                        `This is an HTTP error: The status is ${response.status}`
+                    );
+                }
+                return response.json();
+            })
+            .then((actualData) => {
+                const user = actualData.users;
+                const isValid = user.filter(arr => email === arr.email && password === arr.password)[0]
+                if (isValid) {
+                    onClose();
+                    setUser({ image: isValid.image, firstName: isValid.firstName, lastname: isValid.lastName, birthDate: isValid.birthDate, email: isValid.email, phone: isValid.phone })
+                }
+                setData(actualData.users);
+                setError(null);
+            })
+            .catch((err) => {
+                setError(err.message);
+                setData(null);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
     }
+
+    const submitRegister = (r) => {
+        r.preventDefault()
+
+        if (firstName !== "" || email !== "" || phone !== "" || password !== "") {
+            fetch('https://dummyjson.com/users', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: firstName,
+                    username: userName,
+                    email: email,
+                    phone: phone,
+                    password: password
+                    /* other user data */
+                })
+            })
+        }
+    }
+
+
 
     return (
         <React.Fragment>
@@ -62,20 +118,24 @@ export default function Navbar() {
                             color="black"
                         >
                             <Button to={"/Home"} as={Link} colorScheme='black' variant="ghost">Home</Button>
-                            <Button to={"/Kelas"} as={Link} colorScheme='black' variant="ghost">Kelas</Button>
                         </HStack>
                         {(user) ? (
                             <HStack>
+                                <Button to={"/Kelas"} as={Link} colorScheme='black' variant="ghost">Kelas</Button>
                                 <Menu>
                                     <MenuButton>
-                                        <Avatar src='https://bit.ly/broken-link' bg='teal.500' size='sm' />
+                                        <Avatar src={user.image} bg='teal.500' size='sm' />
                                     </MenuButton>
                                     <MenuList bg="#EFEAEA">
-                                        <MenuItem>Profile</MenuItem>
+                                        <MenuItem to={"/Profile"} as={Link} >Profile</MenuItem>
                                         <Divider />
                                         <MenuItem >Setting</MenuItem>
                                         <Divider />
-                                        <MenuItem >Logout</MenuItem>
+                                        <MenuItem onClick={(e) => {
+                                            setUser(null)
+                                            setEmail(null)
+                                            setPassword(null)
+                                        }}>Logout</MenuItem>
                                     </MenuList>
                                 </Menu>
                             </HStack>
@@ -132,15 +192,16 @@ export default function Navbar() {
                                 <Box p={2}>
                                     <Box my={4} textAlign="left">
                                         <form onSubmit={submitLogin}>
+
                                             <FormControl>
                                                 <FormLabel>Email</FormLabel>
-                                                <Input type="email" placeholder="test@test.com" />
+                                                <Input type="email" placeholder="test@test.com" onChange={(e) => { setEmail(e.target.value) }} />
                                             </FormControl>
                                             <FormControl mt={6}>
                                                 <FormLabel>Password</FormLabel>
-                                                <Input type="password" placeholder="*******" />
+                                                <Input type="password" placeholder="*******" onChange={(e) => { setPassword(e.target.value) }} />
                                             </FormControl>
-                                            <Button width="full" mt={2} bg="#006D77" type="submit" onClick={() => {onClose()}}>
+                                            <Button width="full" mt={2} bg="#006D77" type="submit" color={"white"}>
                                                 Sign In
                                             </Button>
 
@@ -173,24 +234,24 @@ export default function Navbar() {
                             <Flex width="full" align="center" justifyContent="center">
                                 <Box p={2}>
                                     <Box my={4} textAlign="left">
-                                        <form>
+                                        <form onSubmit={submitRegister}>
                                             <FormControl>
                                                 <FormLabel>Email</FormLabel>
-                                                <Input type="email" placeholder="Masukkan Email" />
+                                                <Input type="email" placeholder="Masukkan Email" onChange={(r) => { setEmail(r.target.value) }} />
                                             </FormControl>
                                             <FormControl mt={3}>
                                                 <FormLabel>Nama</FormLabel>
-                                                <Input type="nama" placeholder="Masukkan nama lengkap" />
+                                                <Input type="nama" placeholder="Masukkan nama lengkap" onChange={(r) => { setFirstname(r.target.value) }} />
                                             </FormControl>
                                             <FormControl mt={3}>
                                                 <FormLabel>Nomor Hp</FormLabel>
-                                                <Input type="nomor hp" placeholder="Masukkan nomor hp" />
+                                                <Input type="nomor hp" placeholder="Masukkan nomor hp" onChange={(r) => { setPhone(r.target.value) }} />
                                             </FormControl>
                                             <FormControl mt={3}>
                                                 <FormLabel>Password</FormLabel>
-                                                <Input type="password" placeholder="Masukkan Password" />
+                                                <Input type="password" placeholder="Masukkan Password" onChange={(r) => { setPassword(r.target.value) }} />
                                             </FormControl>
-                                            <Button width="full" mt={6} type="submit" bg="#006D77" color={"white"} onClick={() => {onClose()}}>
+                                            <Button width="full" mt={6} type="submit" bg="#006D77" color={"white"}>
                                                 Register
                                             </Button>
                                         </form>

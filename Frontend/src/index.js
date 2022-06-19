@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import Navbar from './HomePage/Navbar';
 import Kelas from './Kelas/kelas';
 import Dashbord from "./HomePage/Dashbord";
+import Profile from "./HomePage/Profile";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,6 +21,7 @@ root.render(
             <Route path="/Home" element={<Dashbord />} />
           </Route>
           <Route path="/Kelas" element={<Kelas />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </ChakraProvider>
