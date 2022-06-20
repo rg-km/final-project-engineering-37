@@ -3,6 +3,7 @@ import './App.css';
 import React from "react";
 import Dashbord from "./HomePage/Dashbord";
 import Kelas from './Kelas/kelas';
+import Profile from './HomePage/Profile'
 
 const App = () => {
     return (
