@@ -129,7 +129,7 @@ export default function Navbar() {
                                     <MenuList bg="#EFEAEA">
                                         <MenuItem to={"/Profile"} as={Link} >Profile</MenuItem>
                                         <Divider />
-                                        <MenuItem >Setting</MenuItem>
+                                        <MenuItem to={""} as={Link}>Setting</MenuItem>
                                         <Divider />
                                         <MenuItem onClick={(e) => {
                                             setUser(null)
