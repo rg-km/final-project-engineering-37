@@ -5,7 +5,8 @@ import {
     Divider,
     Avatar,
     Heading,
-    HStack
+    HStack,
+    Button
 } from '@chakra-ui/react'
 import NavItem from './NavItem'
 import { Link } from "react-router-dom";
@@ -26,16 +27,16 @@ export default function Sidebar() {
             background={"teal"}
         >
             <Flex
-                p="5%"
+                p="10%"
                 flexDir="column"
                 w="100%"
                 alignItems={navSize == "small" ? "center" : "flex-start"}
                 as="nav"
             >
-                <NavItem to={""} as={Link} navSize={navSize} title="Dashboard" description="This is the description for the dashboard." />
-                <NavItem to={"/FormBeasiswa"} as={Link} navSize={navSize} title="Tambah Beasiswa" />
-                <NavItem to={"/FormLomba"} as={Link} navSize={navSize}  title="Tambah Lomba" />
-                <NavItem to={"/FormSeminar"} as={Link} navSize={navSize}  title="Tambah Seminar" />
+                <Button to={"/"} as={Link} navSize={navSize} mt="50px" fontSize="20px" color="white" variant="ghost" title="Dashboard" description="This is the description for the dashboard.">Dashboard</Button>
+                <Button to={"/FormBeasiswa"} as={Link} mt="50px" fontSize="20px" color="white" navSize={navSize} variant="ghost" title="Tambah Beasiswa">Form Besiswa</Button>
+                <Button to={"/FormLomba"} as={Link} mt="50px" fontSize="20px" color="white" navSize={navSize} variant="ghost"  title="Tambah Lomba">Form Lomba</Button>
+                <Button to={"/FormSeminar"} as={Link} mt="50px" fontSize="20px" color="white" navSize={navSize} variant="ghost"  title="Tambah Seminar">Form Seminar</Button>
             </Flex>
 
             <Flex

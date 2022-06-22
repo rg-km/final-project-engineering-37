@@ -40,7 +40,7 @@ export default function Navbar() {
     const [password, setPassword] = useState("")
     const [firstName, setFirstname] = useState("")
     const [phone, setPhone] = useState("")
-    const [userName, setUsername] = useState("")
+    const [userName, setuserName] = useState("")
 
 
     const submitLogin = (e) => {
@@ -72,13 +72,52 @@ export default function Navbar() {
             .finally(() => {
                 setLoading(false);
             });
+
+        // fetch('https://dummyjson.com/auth/login', {
+            
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({
+
+        //         email: 'atuny0@sohu.com',
+        //         password: '9uQFF1Lh',
+        //         // expiresInMins: 60, // optional
+        //     })
+            
+        // })
+        // .then((response) => {
+        //     if (!response.ok) {
+        //         throw new Error(
+        //             `This is an HTTP error: The status is ${response.status}`
+        //         );
+        //     }
+        //     return response.json();
+        // })
+        // .then((actualData) => {
+        //     const user = actualData;
+        //     // const isValid = user.filter(arr => username === arr.username && password === arr.password)[0]
+        //     // if (isValid) {
+        //     //     onClose();
+        //     //     setUser({ image: isValid.image, firstName: isValid.firstName, lastname: isValid.lastName, birthDate: isValid.birthDate, email: isValid.email, phone: isValid.phone })
+        //     // }
+        //     setData(actualData);
+        //     setError(null);
+        //     console.log(actualData)
+        // })
+        // .catch((err) => {
+        //     setError(err.message);
+        //     setData(null);
+        // })
+        // .finally(() => {
+        //     setLoading(false);
+        // });
     }
 
     const submitRegister = (r) => {
         r.preventDefault()
 
-        if (firstName !== "" || email !== "" || phone !== "" || password !== "") {
-            fetch('https://dummyjson.com/users', {
+        if (firstName !== "" | userName !== "" || email !== "" || phone !== "" || password !== "") {
+            fetch('https://dummyjson.com/users/add', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -117,11 +156,12 @@ export default function Navbar() {
                             mr={1}
                             color="black"
                         >
-                            <Button to={"/Home"} as={Link} colorScheme='black' variant="ghost">Home</Button>
+                            <Button to={"/"} as={Link} colorScheme='black' variant="ghost">Home</Button>
                         </HStack>
                         {(user) ? (
                             <HStack>
                                 <Button to={"/Kelas"} as={Link} colorScheme='black' variant="ghost">Kelas</Button>
+                                <Button to={"/Sidebar"} as={Link} colorScheme='black' variant="ghost">Create</Button>
                                 <Menu>
                                     <MenuButton>
                                         <Avatar src={user.image} bg='teal.500' size='sm' />
@@ -129,9 +169,9 @@ export default function Navbar() {
                                     <MenuList bg="#EFEAEA">
                                         <MenuItem to={"/Profile"} as={Link} >Profile</MenuItem>
                                         <Divider />
-                                        <MenuItem to={""} as={Link}>Setting</MenuItem>
+                                        <MenuItem to={"/Setting"} as={Link}>Setting</MenuItem>
                                         <Divider />
-                                        <MenuItem onClick={(e) => {
+                                        <MenuItem to={"/"} as={Link} onClick={(e) => {
                                             setUser(null)
                                             setEmail(null)
                                             setPassword(null)
@@ -195,7 +235,7 @@ export default function Navbar() {
 
                                             <FormControl>
                                                 <FormLabel>Email</FormLabel>
-                                                <Input type="email" placeholder="test@test.com" onChange={(e) => { setEmail(e.target.value) }} />
+                                                <Input type="text" placeholder="test@test.com" onChange={(e) => { setEmail(e.target.value) }} />
                                             </FormControl>
                                             <FormControl mt={6}>
                                                 <FormLabel>Password</FormLabel>
@@ -240,8 +280,12 @@ export default function Navbar() {
                                                 <Input type="email" placeholder="Masukkan Email" onChange={(r) => { setEmail(r.target.value) }} />
                                             </FormControl>
                                             <FormControl mt={3}>
-                                                <FormLabel>Nama</FormLabel>
+                                                <FormLabel>Fisrt Name</FormLabel>
                                                 <Input type="nama" placeholder="Masukkan nama lengkap" onChange={(r) => { setFirstname(r.target.value) }} />
+                                            </FormControl>
+                                            <FormControl mt={3}>
+                                                <FormLabel>Username</FormLabel>
+                                                <Input type="nama" placeholder="Masukkan nama lengkap" onChange={(r) => { setuserName(r.target.value) }} />
                                             </FormControl>
                                             <FormControl mt={3}>
                                                 <FormLabel>Nomor Hp</FormLabel>
