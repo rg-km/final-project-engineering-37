@@ -8,7 +8,7 @@ export default function PilihanSmp() {
     return (
         <Flex direction={"column"} alignItems="center" justifyContent="center" marginTop={30}>
             <Button fontSize="20px" bg="#006D77" color="white" h="60px" w="200px" borderRadius="50px">Sekolah Menengah<br></br> Pertama</Button>
-            <Grid marginTop={50} className="kotak" gridTemplateColumns={'repeat(3, 1fr)'} gap={12}>
+            <Grid marginTop={40} className="kotak" gridTemplateColumns={'repeat(3, 1fr)'} gap={12}>
 
                 <GridItem background="gray.100" borderRadius={20} maxWidth={400}>
                     <Box position={"relative"} borderRadius={20} transition={'.2s'} _hover={{ transform: 'scale(1.1)', zIndex: 5, boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', cursor: 'pointer' }}>

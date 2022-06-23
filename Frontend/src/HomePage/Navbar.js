@@ -228,7 +228,7 @@ export default function Navbar() {
                         </Grid>
                         <ModalCloseButton />
                         <ModalBody>
-                            <Flex width="full" align="center" justifyContent="center">
+                            <Flex width="full" align="center"  justifyContent="center">
                                 <Box p={2}>
                                     <Box my={4} textAlign="left">
                                         <form onSubmit={submitLogin}>
