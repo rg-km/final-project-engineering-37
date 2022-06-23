@@ -1,0 +1,7 @@
+.gambar{
+    position: relative;
+}
+.gambar::before{
+    content: "";
+    position: absolute;
+}

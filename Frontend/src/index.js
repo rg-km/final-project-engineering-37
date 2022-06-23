@@ -14,7 +14,9 @@ import FormBeasiswa from "./Admin/FormBeasiswa";
 import FormLomba from "./Admin/FormLomba";
 import FormSeminar from "./Admin/FormSeminar";
 import Setting from "./Setting/setting";
-// import PilihanSd from "./Materi/PilihanSd";
+import PilihanSd from "./Materi/PilihanSd";
+import PilihanSmp from "./Materi/PilihanSmp";
+import PilihanSma from "./Materi/PilihanSma";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -29,7 +31,9 @@ root.render(
             <Route path="/Kelas" element={<Kelas />} />
             <Route path="/Profile" element={<Profile />} />
             <Route path="/Setting" element={<Setting />} />
-            {/* <Route path="/PilihanSd" element={<PilihanSd />} /> */}
+            <Route path="/PilihanSd" element={<PilihanSd />} />
+            <Route path="/PilihanSmp" element={<PilihanSmp />} />
+            <Route path="/PilihanSma" element={<PilihanSma />} />
           </Route>
           <Route path="/Sidebar" element={<Sidebar />} />
           <Route path="/FormBeasiswa" element={<FormBeasiswa />} />
