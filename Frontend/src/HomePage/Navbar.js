@@ -228,7 +228,7 @@ export default function Navbar() {
                         </Grid>
                         <ModalCloseButton />
                         <ModalBody>
-                            <Flex width="full" align="center" justifyContent="center">
+                            <Flex width="full" align="center"  justifyContent="center">
                                 <Box p={2}>
                                     <Box my={4} textAlign="left">
                                         <form onSubmit={submitLogin}>
@@ -259,7 +259,7 @@ export default function Navbar() {
                         </ModalFooter> */}
                     </ModalContent>
                 ) : (
-                    <ModalContent borderRadius="20" width={{ md: "400px", base: "400px" }} height={{ md: "600px", base: "600px" }}>
+                    <ModalContent borderRadius="20" width={{ md: "400px", base: "400px" }} height={{ md: "650px", base: "650px" }}>
                         <ModalHeader color="#006D77" fontSize={30}><Center>Register EdTech</Center></ModalHeader>
                         <Grid templateColumns='repeat(10, 1fr)' gap={1}>
                             <GridItem colSpan={6} textAlign="right">Already have account?</GridItem>
