@@ -4,6 +4,7 @@
   EdTech itu sendiri adalah gabungan dari edukasi dan technologi. Jadi dapat diartikan sebagai pembelajaran yang menggunakan media teknologi.
 
 ## 👁️ Preview/Screenshots
+<a href="https://www.canva.com/design/DAFCpAI9Mtk/d_l0nhLt_phAEWf3y8KDQg/view?utm_content=DAFCpAI9Mtk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><img alt="Canva" src="https://img.shields.io/badge/Canva-E4405F?style=for-the-badge&logo=canva&logoColor=white"></a>
 
 ## Contributors ✨
 

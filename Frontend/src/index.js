@@ -18,6 +18,8 @@ import PilihanSd from "./Materi/PilihanSd";
 import PilihanSmp from "./Materi/PilihanSmp";
 import PilihanSma from "./Materi/PilihanSma";
 import Beasiswa from "./Information/Beasiswa";
+import Lomba from "./Information/Lomba";
+import Seminar from "./Information/Seminar";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -36,6 +38,8 @@ root.render(
             <Route path="/PilihanSmp" element={<PilihanSmp />} />
             <Route path="/PilihanSma" element={<PilihanSma />} />
             <Route path="/Beasiswa" element={<Beasiswa />} />
+            <Route path="/Lomba" element={<Lomba />} />
+            <Route path="/Seminar" element={<Seminar />} />
           </Route>
           <Route path="/Sidebar" element={<Sidebar />} />
           <Route path="/FormBeasiswa" element={<FormBeasiswa />} />

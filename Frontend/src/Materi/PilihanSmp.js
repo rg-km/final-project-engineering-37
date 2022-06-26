@@ -12,20 +12,20 @@ export default function PilihanSmp() {
 
                 <GridItem background="gray.100" borderRadius={20} maxWidth={400}>
                     <Box position={"relative"} borderRadius={20} transition={'.2s'} _hover={{ transform: 'scale(1.1)', zIndex: 5, boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', cursor: 'pointer' }}>
-                        <Image className="gambar" height="-moz-min-content" p={"60px"} src="https://cdn-icons.flaticon.com/png/512/2997/premium/2997322.png?token=exp=1655962850~hmac=c03ff66542345ba49ab85aea45f3b1c4" alt='Content image' />
-                        <Center><Button to={"/"} as={Link} className="nama" width={150} colorScheme="teal" borderRadius={15} marginBottom={3} _hover={{background:'red', cursor: 'pointer'}}>Beasiswa</Button></Center>
+                        <Image className="gambar" height="-moz-min-content" p={"60px"} src="https://user-images.githubusercontent.com/30518462/175796886-0b2f195f-1f3a-461e-853b-fccf84393993.png" alt='Content image' />
+                        <Center><Button to={"/Beasiswa"} as={Link} className="nama" width={150} colorScheme="teal" borderRadius={15} marginBottom={3} _hover={{background:'red', cursor: 'pointer'}}>Beasiswa</Button></Center>
                     </Box>
                 </GridItem>
                 <GridItem background="gray.100" borderRadius={20} maxWidth={400}>
                     <Box position={"relative"} borderRadius={20} transition={'.2s'} _hover={{ transform: 'scale(1.1)', zIndex: 5, boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', cursor: 'pointer' }}>
-                        <Image className="gambar" height="-moz-min-content" p={"60px"} src="https://cdn-icons.flaticon.com/png/512/3285/premium/3285494.png?token=exp=1655965034~hmac=1f937ba89cef09e6e560cad86ca0ef2a" alt='Content image' />
-                        <Center><Button className="nama" width={150} colorScheme="teal" borderRadius={15} marginBottom={3} _hover={{background:'#004D78', cursor: 'pointer'}}>Lomba-Lomba</Button></Center>
+                        <Image className="gambar" height="-moz-min-content" p={"60px"} src="https://user-images.githubusercontent.com/30518462/175796898-08916595-384c-42fe-bbac-23d753e12d4c.png" alt='Content image' />
+                        <Center><Button to={"/Lomba"} as={Link} className="nama" width={150} colorScheme="teal" borderRadius={15} marginBottom={3} _hover={{background:'#004D78', cursor: 'pointer'}}>Lomba-Lomba</Button></Center>
                     </Box>
                 </GridItem>
                 <GridItem background="gray.100" borderRadius={20} maxWidth={400}>
                     <Box position={"relative"} borderRadius={20} transition={'.2s'} _hover={{ transform: 'scale(1.1)', zIndex: 5, boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)', cursor: 'pointer' }}>
                         <Image className="gambar" height="-moz-min-content" p={"60px"} src="https://cdn-icons-png.flaticon.com/512/2037/2037855.png" alt='Content image' />
-                        <Center><Button className="nama" width={150} colorScheme="teal" borderRadius={15} marginBottom={3} _hover={{background:'#79A2BC', cursor: 'pointer'}}>Seminar</Button></Center>
+                        <Center><Button to={"/Seminar"} as={Link} className="nama" width={150} colorScheme="teal" borderRadius={15} marginBottom={3} _hover={{background:'#79A2BC', cursor: 'pointer'}}>Seminar</Button></Center>
                     </Box>
                 </GridItem>
             </Grid>
